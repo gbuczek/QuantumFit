@@ -135,32 +135,32 @@ export default function Integracion() {
         ) : miFitData?.profile ? (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <p className="text-sm text-primary-400">Nombre</p>
+              <p className="text-sm text-white">Nombre</p>
               <p className="text-white font-medium">{miFitData.profile.name}</p>
             </div>
             <div>
-              <p className="text-sm text-primary-400">Email</p>
+              <p className="text-sm text-white">Email</p>
               <p className="text-white font-medium">{miFitData.profile.email}</p>
             </div>
             <div>
-              <p className="text-sm text-primary-400">DNI</p>
+              <p className="text-sm text-white">DNI</p>
               <p className="text-white font-medium">{miFitData.profile.dni}</p>
             </div>
             <div>
-              <p className="text-sm text-primary-400">Saldo</p>
+              <p className="text-sm text-white">Saldo</p>
               <p className="text-white font-medium">${miFitData.profile.balance}</p>
             </div>
             <div>
-              <p className="text-sm text-primary-400">Membresías</p>
+              <p className="text-sm text-white">Membresías</p>
               <p className="text-white font-medium">{miFitData.memberships.length}</p>
             </div>
             <div>
-              <p className="text-sm text-primary-400">Asistencias</p>
+              <p className="text-sm text-white">Asistencias</p>
               <p className="text-white font-medium">{miFitData.attendances.length}</p>
             </div>
           </div>
         ) : (
-          <p className="text-dark-400">No se pudieron cargar los datos</p>
+          <p className="text-white/80">No se pudieron cargar los datos</p>
         )}
       </div>
 
@@ -173,7 +173,7 @@ export default function Integracion() {
             placeholder="Buscar usuario por nombre o email..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-2 bg-dark-400 border border-primary-500/30 rounded-lg text-white placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="w-full px-4 py-2 bg-dark-400 border border-primary-500/30 rounded-lg text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
           {searchTerm && filteredUsers.length > 0 && (
             <div className="absolute z-10 mt-1 w-full bg-dark-200 border border-primary-500/30 rounded-lg shadow-xl max-h-60 overflow-y-auto">
@@ -186,7 +186,7 @@ export default function Integracion() {
                   }`}
                 >
                   <p className="text-white font-medium">{u.name}</p>
-                  <p className="text-sm text-primary-400">{u.email} · {u.role}</p>
+                  <p className="text-sm text-white/80">{u.email} · {u.role}</p>
                 </button>
               ))}
             </div>
@@ -198,7 +198,7 @@ export default function Integracion() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-white font-medium">{selectedUser.name}</p>
-                <p className="text-sm text-primary-400">{selectedUser.email} · DNI: {selectedUser.id}</p>
+                <p className="text-sm text-white/80">{selectedUser.email} · DNI: {selectedUser.id}</p>
               </div>
               <button
                 onClick={handleSync}

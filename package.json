@@ -1,0 +1,16 @@
+{
+  "name": "quantum-fit",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "cd quantum-fit-landing && npm install && cd ../quantum-fit-admin && npm install",
+    "dev": "concurrently -n landing,admin -c magenta,cyan \"npm run dev:landing\" \"npm run dev:admin\"",
+    "dev:landing": "cd quantum-fit-landing && npm run dev",
+    "dev:admin": "cd quantum-fit-admin && npm run dev",
+    "build:landing": "cd quantum-fit-landing && npm run build",
+    "build:admin": "cd quantum-fit-admin && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
