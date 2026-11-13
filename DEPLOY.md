@@ -214,8 +214,8 @@ curl -D - -o /dev/null -H "Origin: https://quantum-fit-admin.vercel.app" \
 
 | # | Tarea | Prioridad |
 | --- | --- | --- |
-| 1 | Renovar `EXTERNAL_API_TOKEN` de Crystal (el actual devuelve 401 en toda la API) | 🔴 Alta |
-| 2 | Cambiar la contraseña de `admin@quantumfit.com` | 🔴 Alta |
+| 1 | **Credenciales de Crystal / MyFit**: el login a `https://crystal.getmifit.app/api/login` devuelve **401 Unauthorized**, así que no entran membresías ni asistencias importadas. El backend no usa un token estático: hace login con `EXTERNAL_USER_EMAIL` / `EXTERNAL_USER_PASSWORD` y cachea el Bearer 1 h (`src/services/crystal-auth.service.ts`). Hay que conseguir credenciales válidas de un socio de prueba. | 🔴 Alta |
+| 2 | Cambiar la contraseña de `admin@quantumfit.com` — el seed corre en cada arranque con `upsert`, así que un redeploy la vuelve a poner en `Admin123!` | 🔴 Alta |
 | 3 | `MERCADOPAGO_ACCESS_TOKEN` es un token **de prueba** (`TEST-…`): los pagos no cobran real | 🔴 Alta |
 | 4 | Activar backups automáticos en los dos volumes | 🟡 Media |
 | 5 | Configurar un límite de gasto en la cuenta (Billing → Usage limits) | 🟡 Media |
